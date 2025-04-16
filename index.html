@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="mt-3 text-center">
+      <h1 class="text-primary">Health Tracker</h1>
+      <p class="text-muted">Track Your daily activites</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="">
+            <label>Monday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar" style="width: 20%" id="Monday"></div>
+            </div>
+          </div>
+          <div class="">
+            <label>Tuesday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar" style="width: 50%" id="Tuesday"></div>
+            </div>
+          </div>
+          <div class="">
+            <label>Wednesday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="progress-bar" style="width: 60%" id="Wednesday"></div>
+            </div>
+          </div>
+          <div class="">
+            <label>Thrusday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar"
+                style="width: 20%; background-color: violet"
+                id="Thrusday"
+              ></div>
+            </div>
+          </div>
+          <div class="">
+            <label>Friday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar bg-danger"
+                style="width: 20%"
+                id="Friday"
+              ></div>
+            </div>
+          </div>
+          <div class="">
+            <label>Saturday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar bg-seconday"
+                style="width: 20%"
+                id="Saturday"
+              ></div>
+            </div>
+          </div>
+          <div class="">
+            <label>Sunday</label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar bg-success"
+                style="width: 20%"
+                id="Sunday"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 p-3 d-flex justify-content-center">
+          <div>
+            <h2 class="mb-3 text-muted">Daily Tasks</h2>
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" />
+              <span class="px-3">20 Pushups </span>
+            </div>
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" checked />
+              <span class="px-3">Health Food </span>
+            </div>
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" />
+              <span class="px-3">20 Pullups </span>
+            </div>
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" />
+              <span class="px-3">20 Situps </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      console.log(checkboxes);
+
+      const Mon = document.getElementById("Monday");
+      const Tue = document.getElementById("Tuesday");
+      const Wed = document.getElementById("Wednesday");
+      const Thr = document.getElementById("Thrusday");
+      const Fri = document.getElementById("Friday");
+      const Sat = document.getElementById("Saturday");
+      const Sun = document.getElementById("Sunday");
+
+      // sun = 'hello'
+
+      let num = checkboxes.length;
+      let days = ["Sun", "mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
+
+      let d = new Date();
+      console.log(d.getDay());
+      let day = days[d.getDay()];
+
+      if (day == "Mon") {
+        Mon.style.width = 0 + "%";
+      }
+      if (day == "Tue") {
+        Tue.style.width = 0 + "%";
+      }
+      if (day == "Wed") {
+        Wed.style.width = 0 + "%";
+      }
+      if (day == "Thr") {
+        Thr.style.width = 0 + "%";
+      }
+      if (day == "Fri") {
+        Fri.style.width = 0 + "%";
+      }
+      if (day == "Sat") {
+        Sat.style.width = 0 + "%";
+      }
+      if (day == "Sun") {
+        Sat.style.width = 0 + "%";
+      }
+
+      function callCheck() {
+        let n = 0;
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked === true) {
+            n = n + 1;
+          }
+        });
+        console.log(n);
+        let per = (n / num) * 100;
+
+        if (day == "Mon") {
+          Mon.style.width = per + "%";
+        }
+        if (day == "Tue") {
+          Tue.style.width = per + "%";
+        }
+        if (day == "Wed") {
+          Wed.style.width = per + "%";
+        }
+        if (day == "Thr") {
+          Thr.style.width = per + "%";
+        }
+        if (day == "Fri") {
+          Fri.style.width = per + "%";
+        }
+        if (day == "Sat") {
+          Sat.style.width = per + "%";
+        }
+        if (day == "Sun") {
+          Sat.style.width = per + "%";
+        }
+      }
+      callCheck();
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", callCheck);
+      });
+    </script>
+  </body>
+</html>
